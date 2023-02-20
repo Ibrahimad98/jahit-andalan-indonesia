@@ -15,7 +15,7 @@ async function errors(error, req, res, next) {
       break;
     case "bad_request_login":
       code = 400;
-      message = "input username and password required for login";
+      message = "input username and password for login";
       break;
     case "invalid_credentials":
       code = 401;
