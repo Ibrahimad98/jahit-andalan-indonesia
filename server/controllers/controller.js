@@ -1,6 +1,7 @@
 const { hashPassword, comparedPassword } = require("../helpers/bcrypt");
 const { createToken } = require("../helpers/jwt");
-const { User, Order } = require("../models/index");
+const { User, Order, sequelize } = require("../models/index");
+const { QueryTypes } = require("sequelize");
 
 class Controller {
   static async register(req, res, next) {
@@ -101,6 +102,8 @@ class Controller {
           UserId: req.user.id,
         },
       });
+
+      // let data = await sequelize.query('SELECT * FROM "Orders" WHERE "UserId" = ' + req.user.id + " ORDER BY id ASC", { type: QueryTypes.SELECT });
       res.status(200).json(data);
     } catch (error) {
       console.log(error);
