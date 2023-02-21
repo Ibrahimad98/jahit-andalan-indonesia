@@ -4,7 +4,7 @@ List of Available Endpoints:
 
 - `POST/ register`
 - `POST/ login`
-- `GET/ users/:id`
+- `GET/ users`
 - `GET/ orders`
 - `POST/ orders`
 
