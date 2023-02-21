@@ -40,7 +40,7 @@ export default {
       </div>
       <div class="d-flex justify-content-center" style="height: 70%">
         <div>
-          <p class="mt-2">input username and password</p>
+          <p class="mt-2">input username and password to log in</p>
           <form class="form" @submit.prevent="submitForm">
             <input
               type="text"
@@ -56,7 +56,7 @@ export default {
             />
             <input type="submit" class="mt-3 btn btn-primary" value="Login" />
             <p class="mt-4">
-              doesn't have an account?
+              don't have any account?
               <a href="#" @click.prevent="changePage('/register')"
                 >register here</a
               >

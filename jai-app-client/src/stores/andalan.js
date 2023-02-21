@@ -67,10 +67,14 @@ export const useAndalanStore = defineStore("andalan", {
     },
     async fetchOrder() {
       try {
-        const { data } = await axios.get(`orders`);
+        const { data } = await axios.get(`orders`, {
+          headers: {
+            access_token: localStorage.access_token,
+          },
+        });
         // console.log(data, "ini dr store");
 
-        this.articles = data;
+        this.orders = data;
       } catch (error) {
         console.log(error);
       }
@@ -78,11 +82,19 @@ export const useAndalanStore = defineStore("andalan", {
 
     async addOrder(payload) {
       try {
-        const { data } = await axios.post("orders", {
-          name: payload.name,
-          amount: payload.amount,
-          price: payload.price,
-        });
+        const { data } = await axios.post(
+          "orders",
+          {
+            name: payload.name,
+            amount: payload.amount,
+            price: payload.price,
+          },
+          {
+            headers: {
+              access_token: localStorage.access_token,
+            },
+          }
+        );
         console.log("berhasil menambahkan data dari store");
         Swal.fire({
           position: "top-end",
