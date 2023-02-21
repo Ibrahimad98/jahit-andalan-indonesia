@@ -97,48 +97,6 @@ _401 - Unauthorized_
   }
   ```
 
-### GET /products
-
-### Description
-
-- get all products available
-
-- Headers
-
-```json
-{
-  "access_token": "application/x-www-form-urlencoded"
-}
-```
-
-### Response
-
-_200 - OK_
-
-- Body
-
-  ```json
-      [{
-        "id": Integer,
-        "name": String,
-        "amount": Integer,
-        "price": Integer,
-      },
-      ...
-      ]
-  ```
-
-_401 - Unauthorized_
-
-- Body
-
-  ```json
-  {
-    "code": 401,
-    "message": String
-  }
-  ```
-
 ### GET /users
 
 ### Description
@@ -167,6 +125,48 @@ _200 - OK_
         "createdAt": String,
         "updatedAt": String,
       }
+  ```
+
+_401 - Unauthorized_
+
+- Body
+
+  ```json
+  {
+    "code": 401,
+    "message": String
+  }
+  ```
+
+### GET /orders
+
+### Description
+
+- get all orders available
+
+- Headers
+
+```json
+{
+  "access_token": "application/x-www-form-urlencoded"
+}
+```
+
+### Response
+
+_200 - OK_
+
+- Body
+
+  ```json
+      [{
+        "id": Integer,
+        "name": String,
+        "amount": Integer,
+        "price": Integer,
+      },
+      ...
+      ]
   ```
 
 _401 - Unauthorized_
