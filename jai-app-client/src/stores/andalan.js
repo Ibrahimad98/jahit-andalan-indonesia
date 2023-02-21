@@ -76,6 +76,12 @@ export const useAndalanStore = defineStore("andalan", {
 
         this.orders = data;
       } catch (error) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${error.response.data.message}`,
+          footer: "",
+        });
         console.log(error);
       }
     },
@@ -105,6 +111,12 @@ export const useAndalanStore = defineStore("andalan", {
         });
         this.changePage("/");
       } catch (error) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${error.response.data.message}`,
+          footer: "",
+        });
         console.log(error);
       }
     },
